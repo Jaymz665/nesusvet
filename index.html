@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Донат для проекта</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #f5f5f5;
+        }
+        .donate-btn {
+            background: #21a038; /* Зелёный, как в Сбере */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+        }
+        .donate-btn:hover {
+            background: #1a832d;
+        }
+        .card-number {
+            font-family: monospace;
+            font-size: 20px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Поддержать проект</h1>
+    <p>Нажмите кнопку, чтобы скопировать номер карты:</p>
+    
+    <button class="donate-btn" onclick="copyCardNumber()">Скопировать номер карты</button>
+    
+    <p>Номер карты: <span class="card-number">2202 2008 6770 1441</span></p>
+    
+    <p>После копирования вставьте его в приложение банка.</p>
+    
+    <script>
+        function copyCardNumber() {
+            const cardNumber = "2202200867701441"; // Можно убрать пробелы для копирования
+            navigator.clipboard.writeText(cardNumber)
+                .then(() => alert("Номер карты скопирован! Теперь вставьте его в приложение банка."))
+                .catch(err => alert("Ошибка: не удалось скопировать"));
+        }
+    </script>
+</body>
+</html>
